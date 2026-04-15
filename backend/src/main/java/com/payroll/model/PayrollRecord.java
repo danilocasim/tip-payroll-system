@@ -2,6 +2,7 @@ package com.payroll.model;
 
 import jakarta.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -29,6 +30,18 @@ public class PayrollRecord {
     @Column(name = "generated_at", insertable = false, updatable = false)
     private LocalDateTime generatedAt;
 
+    @Column(name = "payroll_run_id", length = 36, columnDefinition = "CHAR(36)")
+    private String payrollRunId;
+
+    @Column(name = "employee_profile_id", length = 36, columnDefinition = "CHAR(36)")
+    private String employeeProfileId;
+
+    @Column(name = "pay_period_start")
+    private LocalDate payPeriodStart;
+
+    @Column(name = "pay_period_end")
+    private LocalDate payPeriodEnd;
+
     public Integer getRecordId() { return recordId; }
     public void setRecordId(Integer recordId) { this.recordId = recordId; }
     public Employee getEmployee() { return employee; }
@@ -44,4 +57,12 @@ public class PayrollRecord {
     public String getPayPeriod() { return payPeriod; }
     public void setPayPeriod(String payPeriod) { this.payPeriod = payPeriod; }
     public LocalDateTime getGeneratedAt() { return generatedAt; }
+    public String getPayrollRunId() { return payrollRunId; }
+    public void setPayrollRunId(String payrollRunId) { this.payrollRunId = payrollRunId; }
+    public String getEmployeeProfileId() { return employeeProfileId; }
+    public void setEmployeeProfileId(String employeeProfileId) { this.employeeProfileId = employeeProfileId; }
+    public LocalDate getPayPeriodStart() { return payPeriodStart; }
+    public void setPayPeriodStart(LocalDate payPeriodStart) { this.payPeriodStart = payPeriodStart; }
+    public LocalDate getPayPeriodEnd() { return payPeriodEnd; }
+    public void setPayPeriodEnd(LocalDate payPeriodEnd) { this.payPeriodEnd = payPeriodEnd; }
 }

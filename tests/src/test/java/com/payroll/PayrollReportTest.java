@@ -72,6 +72,21 @@ class PayrollReportTest {
         verify(payrollRecordRepository, times(2)).save(any());
     }
 
+    @Test
+    void testSavePayrollSnapshot_skipsExistingPayPeriod() {
+        Employee existing = emp("A", "Casal");
+        existing.setEmployeeId(1);
+        existing.setPayPeriod("2026-04");
+
+        when(employeeService.getEmployees(null)).thenReturn(List.of(existing));
+        when(payrollRecordRepository.existsByEmployeeEmployeeIdAndPayPeriod(1, "2026-04")).thenReturn(true);
+
+        int saved = payrollService.saveSnapshot(null);
+
+        assertEquals(0, saved);
+        verify(payrollRecordRepository, never()).save(any());
+    }
+
     private Employee emp(String name, String campus) {
         Employee e = new Employee();
         e.setName(name);

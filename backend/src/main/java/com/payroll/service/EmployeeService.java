@@ -2,6 +2,8 @@ package com.payroll.service;
 
 import com.payroll.model.Employee;
 import com.payroll.repository.EmployeeRepository;
+import com.payroll.repository.PayrollRecordRepository;
+import com.payroll.common.exception.ConflictException;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -11,9 +13,11 @@ import java.util.List;
 @Service
 public class EmployeeService {
     private final EmployeeRepository employeeRepository;
+    private final PayrollRecordRepository payrollRecordRepository;
 
-    public EmployeeService(EmployeeRepository employeeRepository) {
+    public EmployeeService(EmployeeRepository employeeRepository, PayrollRecordRepository payrollRecordRepository) {
         this.employeeRepository = employeeRepository;
+        this.payrollRecordRepository = payrollRecordRepository;
     }
 
     public Employee addEmployee(Employee employee) {
@@ -42,6 +46,9 @@ public class EmployeeService {
     }
 
     public void deleteEmployee(Integer id) {
+        if (payrollRecordRepository.existsByEmployeeEmployeeId(id)) {
+            throw new ConflictException("Cannot delete employee with payroll history");
+        }
         employeeRepository.deleteById(id);
     }
 

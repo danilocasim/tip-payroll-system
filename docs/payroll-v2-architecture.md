@@ -37,7 +37,7 @@ The current system is a single Spring Boot backend plus static HTML\/CSS\/JavaSc
 - Separate the product into a dedicated **Admin site** and **Employee site**.
 - Introduce real backend authentication and authorization.
 - Ensure **employees cannot log into the manager portal** and cannot access manager-only APIs.
-- Move to a **React + Spring Boot** architecture that is easier to scale and maintain.
+- Move to a **Next.js + Spring Boot** architecture that is easier to scale and maintain.
 - Keep the backend as a **modular monolith** so it stays simple today but can evolve later.
 - Standardize API contracts, security, and frontend app structure.
 
@@ -70,7 +70,7 @@ The current system is a single Spring Boot backend plus static HTML\/CSS\/JavaSc
 
 ### Recommended Target Shape
 
-- **Two React apps in one frontend monorepo**
+- **Two Next.js App Router apps in one frontend monorepo**
   - `apps/admin-web`
   - `apps/employee-web`
 - **One Spring Boot backend** as a **modular monolith**
@@ -89,8 +89,8 @@ The current system is a single Spring Boot backend plus static HTML\/CSS\/JavaSc
 
 ```mermaid
 graph LR
-    A[Admin React App] --> G[API Gateway / Reverse Proxy]
-    E[Employee React App] --> G
+    A[Admin Next.js App] --> G[API Gateway / Reverse Proxy]
+    E[Employee Next.js App] --> G
     G --> B[Spring Boot Modular Monolith]
     B --> M[(MySQL)]
     B --> R[(Redis Sessions)]
@@ -661,6 +661,8 @@ Indexes:
 - Admin and employee portals should feel related but not identical.
 - Shared design system is allowed for typography, forms, buttons, tables, alerts, and layout primitives.
 - Portal-specific branding and navigation should differ clearly.
+- The approved visual direction is documented in `docs/payroll-v2-ui-ux-spec.md`.
+- Design north star: Apple-inspired minimalism, warm white surfaces, premium yellow accents, graphite contrast, subtle motion, and high readability for real payroll users.
 
 ### Component: AdminLoginPage
 
@@ -948,6 +950,7 @@ packages/
   types/
 docs/
   payroll-v2-architecture.md
+  payroll-v2-ui-ux-spec.md
 ```
 
 ### Handoff Notes for Implementation Agents

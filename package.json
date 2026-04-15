@@ -1,0 +1,17 @@
+{
+  "name": "payroll-system-workspace",
+  "private": true,
+  "packageManager": "pnpm@9.15.9",
+  "scripts": {
+    "dev:admin": "pnpm --filter admin-web dev",
+    "dev:employee": "pnpm --filter employee-web dev",
+    "build": "pnpm --filter admin-web build && pnpm --filter employee-web build",
+    "lint": "pnpm --filter admin-web lint && pnpm --filter employee-web lint"
+  },
+  "devDependencies": {
+    "autoprefixer": "10.4.20",
+    "postcss": "8.4.49",
+    "tailwindcss": "3.4.16",
+    "typescript": "5.7.2"
+  }
+}

@@ -2,6 +2,7 @@ package com.payroll;
 
 import com.payroll.model.Employee;
 import com.payroll.repository.EmployeeRepository;
+import com.payroll.repository.PayrollRecordRepository;
 import com.payroll.service.EmployeeService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,6 +23,9 @@ class EmployeeServiceTest {
 
     @Mock
     private EmployeeRepository employeeRepository;
+
+    @Mock
+    private PayrollRecordRepository payrollRecordRepository;
 
     @InjectMocks
     private EmployeeService employeeService;
@@ -74,8 +78,16 @@ class EmployeeServiceTest {
 
     @Test
     void testDeleteEmployee_success() {
+        when(payrollRecordRepository.existsByEmployeeEmployeeId(1)).thenReturn(false);
         employeeService.deleteEmployee(1);
         verify(employeeRepository).deleteById(1);
+    }
+
+    @Test
+    void testDeleteEmployee_withPayrollHistory_throwsException() {
+        when(payrollRecordRepository.existsByEmployeeEmployeeId(1)).thenReturn(true);
+        assertThrows(RuntimeException.class, () -> employeeService.deleteEmployee(1));
+        verify(employeeRepository, never()).deleteById(anyInt());
     }
 
     @Test

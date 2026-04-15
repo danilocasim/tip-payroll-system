@@ -451,59 +451,16 @@ Recommended pattern:
 
 ### 5.9 UI/UX direction (recommended)
 
-#### Shared design foundation
+Use `docs/payroll-v2-ui-ux-spec.md` as the canonical visual reference.
 
-- Layout grid: 8px spacing system
-- Radius: 12px default, 16px for hero/login cards
-- Typography:
-  - headings: `Plus Jakarta Sans`
-  - body/data: `Inter`
-- Motion: subtle only; 150–220ms transitions
-- Icons: Lucide
-- Contrast: WCAG AA minimum
+Approved direction summary:
 
-#### Admin portal visual direction
-
-- Mood: professional, trustworthy, efficient, data-oriented
-- Structure: sidebar shell with sticky header
-- Color direction:
-  - primary: deep navy / indigo
-  - accent: amber / gold for highlights and active states
-  - surfaces: white / slate with strong contrast
-- UI patterns:
-  - stat cards
-  - interactive data tables
-  - filter bars
-  - modal / drawer editing flows
-  - report cards and trend visuals
-
-Admin UX priorities:
-
-- dense information without clutter
-- fast scanning
-- clear primary actions
-- low-friction repetitive workflows
-
-#### Employee portal visual direction
-
-- Mood: calm, supportive, readable, mobile-first
-- Structure: lighter shell with simpler navigation
-- Color direction:
-  - primary: blue / teal
-  - accent: emerald for positive payroll states
-  - surfaces: soft slate / white with generous spacing
-- UI patterns:
-  - summary cards
-  - payroll history list or simplified table
-  - profile card sections
-  - friendly empty states and status callouts
-
-Employee UX priorities:
-
-- clarity over density
-- easy mobile reading of payroll figures
-- reduced jargon
-- reassuring error and session-expired messaging
+- design style: Apple-inspired minimal enterprise UI
+- base palette: warm white + premium yellow + graphite
+- admin portal: structured, refined, data-dense, sidebar-led
+- employee portal: calmer, lighter, mobile-first, card-led
+- motion: subtle only; 160–220ms
+- accessibility: WCAG AA minimum
 
 #### Shared design system package
 

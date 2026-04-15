@@ -30,7 +30,7 @@ class PayrollServiceTest {
 
     @Test
     void testSalaryComputation() {
-        BigDecimal salary = new EmployeeService(null).computeSalary(new BigDecimal("150.00"), new BigDecimal("160"));
+        BigDecimal salary = new EmployeeService(null, null).computeSalary(new BigDecimal("150.00"), new BigDecimal("160"));
         assertEquals(new BigDecimal("24000.00"), salary);
     }
 

@@ -68,7 +68,12 @@ public class PayrollService {
 
     public int saveSnapshot(String campus) {
         List<Employee> employees = employeeService.getEmployees(campus);
+        int saved = 0;
         for (Employee employee : employees) {
+            if (employee.getPayPeriod() != null && !employee.getPayPeriod().isBlank()
+                    && payrollRecordRepository.existsByEmployeeEmployeeIdAndPayPeriod(employee.getEmployeeId(), employee.getPayPeriod())) {
+                continue;
+            }
             PayrollRecord record = new PayrollRecord();
             record.setEmployee(employee);
             record.setSalary(z(employee.getSalary()));
@@ -77,8 +82,9 @@ public class PayrollService {
             record.setNetPay(calculateNetPay(employee.getSalary(), employee.getBonus(), employee.getDeductions()));
             record.setPayPeriod(employee.getPayPeriod());
             payrollRecordRepository.save(record);
+            saved++;
         }
-        return employees.size();
+        return saved;
     }
 
     public BigDecimal calculateNetPay(BigDecimal salary, BigDecimal bonus, BigDecimal deductions) {
