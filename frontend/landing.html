@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIP Cafeteria Payroll - Role Select</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head><body>
+  <main class="landing-shell">
+    <section class="landing-card">
+      <h1>Technological Institute of the Philippines</h1>
+      <h2>Cafeteria Payroll System</h2>
+      <p class="info">Casal & Arlegui Campuses</p>
+      <div class="role-grid">
+        <article class="role-card">
+          <h3>Manager</h3>
+          <p>Full access - add, edit, and manage payroll</p>
+          <ul>
+            <li class="check">? Can add/edit/delete employees</li>
+            <li class="check">? Can export payroll PDF/CSV</li>
+            <li class="check">? Can save payroll snapshots</li>
+            <li class="xmark">? No authentication required (frontend role only)</li>
+          </ul>
+          <button id="enterManager" class="btn btn-primary">Enter as Manager</button>
+        </article>
+        <article class="role-card">
+          <h3>Employee</h3>
+          <p>View-only access to payroll and employee info</p>
+          <ul>
+            <li class="check">? Can view dashboard and reports</li>
+            <li class="check">? Can filter by campus</li>
+            <li class="xmark">? Cannot add/edit/delete records</li>
+            <li class="xmark">? Cannot export or save snapshots</li>
+          </ul>
+          <button id="enterEmployee" class="btn btn-outline">Enter as Employee</button>
+        </article>
+      </div>
+    </section>
+  </main>
+  <script src="js/landing.js"></script>
+</body></html>

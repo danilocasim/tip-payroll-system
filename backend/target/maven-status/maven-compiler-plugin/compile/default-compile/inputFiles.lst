@@ -1,0 +1,10 @@
+/Users/danilo/repos/TIP_PAYROLL_WEBSITE/payroll-system/backend/src/main/java/com/payroll/PayrollApplication.java
+/Users/danilo/repos/TIP_PAYROLL_WEBSITE/payroll-system/backend/src/main/java/com/payroll/controller/EmployeeController.java
+/Users/danilo/repos/TIP_PAYROLL_WEBSITE/payroll-system/backend/src/main/java/com/payroll/controller/GlobalExceptionHandler.java
+/Users/danilo/repos/TIP_PAYROLL_WEBSITE/payroll-system/backend/src/main/java/com/payroll/controller/PayrollController.java
+/Users/danilo/repos/TIP_PAYROLL_WEBSITE/payroll-system/backend/src/main/java/com/payroll/model/Employee.java
+/Users/danilo/repos/TIP_PAYROLL_WEBSITE/payroll-system/backend/src/main/java/com/payroll/model/PayrollRecord.java
+/Users/danilo/repos/TIP_PAYROLL_WEBSITE/payroll-system/backend/src/main/java/com/payroll/repository/EmployeeRepository.java
+/Users/danilo/repos/TIP_PAYROLL_WEBSITE/payroll-system/backend/src/main/java/com/payroll/repository/PayrollRecordRepository.java
+/Users/danilo/repos/TIP_PAYROLL_WEBSITE/payroll-system/backend/src/main/java/com/payroll/service/EmployeeService.java
+/Users/danilo/repos/TIP_PAYROLL_WEBSITE/payroll-system/backend/src/main/java/com/payroll/service/PayrollService.java

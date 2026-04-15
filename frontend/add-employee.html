@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Add Employee</title><link rel="stylesheet" href="css/styles.css"></head>
+<body>
+<div id="nav"></div>
+<main class="container">
+  <h1>Add Employee</h1>
+  <form id="employeeForm">
+    <div class="form-grid">
+      <div class="input-group"><label>Name</label><input id="name" required></div>
+      <div class="input-group"><label>Position</label><input id="position"></div>
+      <div class="input-group"><label>Work Area</label><select id="workArea"><option>Kitchen</option><option>Cashier</option><option>Service</option></select></div>
+      <div class="input-group"><label>Campus</label><select id="campus"><option>Casal</option><option>Arlegui</option></select></div>
+      <div class="input-group"><label>Hourly Rate</label><input id="hourlyRate" type="number" step="0.01" min="0"></div>
+      <div class="input-group"><label>Hours Worked</label><input id="hoursWorked" type="number" step="0.01" min="0"></div>
+      <div class="input-group"><label>Bonus</label><input id="bonus" type="number" step="0.01" min="0"></div>
+      <div class="input-group"><label>Deductions</label><input id="deductions" type="number" step="0.01" min="0"></div>
+      <div class="input-group"><label>Pay Period</label><select id="payPeriod"><option>Monthly</option><option>Bi-weekly</option></select></div>
+    </div>
+    <p class="info">Salary: <span id="salaryPreview">0.00</span> | Net Pay: <span id="netPreview">0.00</span></p>
+    <p id="formError" class="error"></p>
+    <button class="btn btn-primary" type="submit">Save</button>
+  </form>
+</main>
+<script src="js/common.js"></script>
+<script src="js/add-employee.js"></script>
+</body></html>
+
+

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Employees</title><link rel="stylesheet" href="css/styles.css"></head>
+<body>
+<div id="nav"></div>
+<main class="container">
+  <div class="footer-row">
+    <h1>Employees</h1>
+    <a class="btn btn-primary manager-only" href="add-employee.html">Add New Employee</a>
+  </div>
+  <div class="footer-row">
+    <label>Campus Filter:
+      <select id="campusFilter"><option value="">All</option><option>Casal</option><option>Arlegui</option></select>
+    </label>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Name</th><th>Campus</th><th>Position</th><th>Work Area</th><th>Salary</th><th>Bonus</th><th>Deductions</th><th>Net Pay</th><th>Actions</th></tr></thead>
+      <tbody id="employeesBody"></tbody>
+    </table>
+  </div>
+</main>
+<script src="js/common.js"></script>
+<script src="js/employees.js"></script>
+</body></html>
+
+
